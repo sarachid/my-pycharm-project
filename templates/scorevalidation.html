@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Score Validator</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.validator {
+    max-width: 750px;
+    margin: auto;
+    background-color:cyan;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input[type="number"], input[type="text"],button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: green;
+    width: 75px%;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+input[type="submit"]:hover {
+    opacity: 0.5;
+}
+.button{
+        display:inline-block;
+        padding: 10px 100px;
+        cursor:pointer;
+        text-align:center;
+        outline:none;
+        color:yellow;
+        background-color:green;
+        border:none;
+        border-radius:10px;
+        box-shadow:0 0 10px white;
+        }
+
+    </style>
+</head>
+<body>
+<form method="post" action="read">
+    {% csrf_token%}
+<div class="validator">
+    <center>
+     <h1>STUDENT SCORE VALIDATOR</h1>
+    </center>
+    <table>
+        <tr>
+            <td>NAME:</td>
+            <td><input type="text" name="txtname1" value="{{ name }}"></td>
+        </tr>
+        <tr>
+            <td>PYTHON:</td>
+            <td><input type="number" name="txtpython" value="{{ n1 }}"></td>
+        </tr>
+        <tr>
+            <td>JAVA:</td>
+            <td><input type="number" name="txtjava" value="{{ n2 }}"></td>
+        </tr>
+        <tr>
+            <td>MYSQL:</td>
+            <td><input type="number" name="txtmsql" value="{{ n3 }}"></td>
+        </tr>
+        <tr>
+            <td>HTML:</td>
+            <td><input type="number" name="txthtml" value="{{ n4 }}"></td>
+        </tr>
+        <tr>
+            <td>DJANGO:</td>
+            <td><input type="number" name="txtdjango" value="{{ n5 }}"></td>
+        </tr>
+        <tr>
+                <td>
+                    <input type="submit" value="Total" name="operation">
+                    <input type="submit" value="Percentage" name="operation">
+                    <input type="submit" value="Grade" name="operation">
+                    <input type="submit" value="Status" name="operation">
+                </td>
+            </tr>
+        <tr>
+                <td><input type="text" value="{{ res }}"></td>
+            </tr>
+         <tr>
+                <td><a href="/year/" class="button">Year Detector</a></td>
+                <td><a href="/marriage/" class="button">Marriage Eligibility</a></td>
+            </tr>
+    </table>
+</div>
+</form>
+
+</body>
+</html>

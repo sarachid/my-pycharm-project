@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.eligible {
+    max-width: 750px;
+    margin: auto;
+    background-color:purple;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+input[type="text"],button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+} input[type="submit"] {
+    background-color: green;
+    width:75px%;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+input[type="submit"]:hover {
+    opacity: 0.5;
+}
+.button{
+        display:inline-block;
+        padding: 10px 100px;
+        cursor:pointer;
+        text-align:center;
+        outline:none;
+        color:yellow;
+        background-color:green;
+        border:none;
+        border-radius:10px;
+        box-shadow:0 0 10px white;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="read">
+    {% csrf_token%}
+<div class="eligible">
+    <center>
+     <h1>MARRIAGE ELIGIBILITY</h1>
+    </center>
+        <table>
+            <tr>
+                 <td>Age:</td>
+            <td><input type="text" name="txtage" value="{{age}}"></td>
+            <tr>
+            <tr>
+                 <td>Gender:</td>
+                <td><select  name="eligible">
+                    <option> option</option>
+                    <option> Male </option>
+                    <option> Female</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Check" name="operation" >
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="GET THE RESULT" value="{{ res }}"></td>
+            </tr>
+            <tr>
+                <td><a href="/" class="button">Score Validator</a></td>
+                <td><a href="/year/" class="button">Year Detector</a></td>
+         </tr>
+        </table>
+</div>
+</form>
+</body>
+</html>
